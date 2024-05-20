@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <style>
+      body {
+        background-color: rgb(12, 10, 46);
+      }
+      .details {
+        width: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        flex-direction: column;
+        margin: 0 auto;
+      }
+      .detail {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+      .detail h3 {
+        color: white;
+        font-size: 30px;
+      }
+      .detail img {
+        width: 300px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+      }
+      .detail span {
+        color: white;
+        font-size: 20px;
+        margin: 5px;
+      }
+      .detail p {
+        color: white;
+        font-size: 16px;
+        font-family: "Times New Roman", Times, serif;
+        text-align: center;
+      }
+
+      html,
+      /* body {
+        position: relative;
+        height: 100%;
+      } */
+
+      .swiper {
+        width: 100%;
+        height: 100%;
+       
+      }
+
+      .swiper-slide {
+        height: 200px;
+        text-align: center;
+        font-size: 18px;
+        background: #1e262f;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        color: #fff;
+      padding: 20px;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .imgDiv {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+
+      .carousel {
+        display: flex;
+        overflow-x: auto;
+      }
+      .carousel h3 {
+        font-size: 15px;
+        text-align: center;
+      }
+      .carousel-item {
+        background-color: #1e262f;
+        margin: 20px;
+        transition: 0.3s ease;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 10px;
+        color: #fff;
+       
+      }
+
+      .carousel-item img {
+        width: 200px;
+        border-radius: 10px;
+      }
+      .container {
+        width: 100%;
+        max-width: 90%;
+        margin: 0 auto;
+      }
+      .similar-movies,.actors {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-size: 30px;
+      }
+      ::-webkit-scrollbar{
+
+    height: 3px;
+   
+}
+::-webkit-scrollbar-track{
+background: #F7F5EB;
+}
+::-webkit-scrollbar-thumb{
+background: #1e262f;
+}
+
+.detail a{
+
+  text-decoration: none;
+  color: rgb(238, 31, 31); 
+  font-size: 20px;
+  margin: 10px;
+}
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+.left a:hover{
+  color: red;
+}
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 60px;
+  background-color: #1e262f;
+  color: #fff;
+  padding: 30px;
+  border-radius: 20px 20px 0px 0px;
+}
+.head .left {
+  display: flex;
+  gap: 20px;
+}
+.head .left a {
+  color: #fff;
+}
+.head .left a .active {
+  color: red;
+}
+.right input {
+  width: 200px;
+  height: 35px;
+  border-radius: 10px;
+  border: 1px solid #cdcdcd;
+  background: #fff;
+  outline: none;
+  padding: 5px;
+}
+.products {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 35px;
+  padding: 50px;
+  justify-content: center;
+}
+
+
+
+.head {
+  position: relative;
+}
+.search-element {
+  z-index: 1;
+  position: absolute;
+  right: 0;
+  top: 5%;
+  padding: 10px;
+}
+
+#search-box {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.search-list {
+  max-height: 300px;
+  overflow-y: auto;
+  background-color: #1e262f;
+}
+
+.search-list-item {
+  display: flex;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+.search-list .link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.search-list-item img {
+  width: 100px;
+  height: 100px;
+}
+
+.search-item-info h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.search-item-info p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+.carousel-item:hover{
+  transform: scale(1.1);
+}
+
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="head container">
+        <div class="left">
+          <a href="index.html">Popular Movies</a>
+          <a href="newMovies.html">New Movies</a>
+          <a href="">Favourite Movies</a>
+        </div>
+        <div class="search-element">
+          <input type="text" placeholder="Search Movie..." id="search-box" />
+
+          <div class="search-list" id="search-list"></div>
+        </div>
+      </div>
+    </header>
+    <div class="details"></div>
+    <h3 class="actors">Actors</h3>
+
+
+    <div class="swiper mySwiper container">
+      <div class="swiper-wrapper"></div>
+    </div>
+    
+
+    <h3 class="similar-movies">Similar Movies</h3>
+    <div class="similar-movies-carousel">
+      <div class="carousel container"></div>
+    </div>
+
+    <script src="details.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 4,
+        spaceBetween: 30,
+      });
+    </script>
+  </body>
+</html>
